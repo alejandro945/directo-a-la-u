@@ -27,7 +27,7 @@ export default function Landing() {
             <Divider variant="middle" />
             <Typography variant='h2'>Medios de pago</Typography>
             <img style={{ width: 400 }} src='/images/MEDIOS_DE_PAGO.png' loading="lazy" alt="props"></img>
-            <TAlert message={"💰 El servicio tiene un costo de $10,000 pesos por trayecto"} type={'warning'} />
+            <TAlert message={"💰 El servicio tiene un costo de $10,000 pesos por trayecto (10,000 la ida y 10,000 el retorno)"} type={'warning'} />
             <AppContext.Provider value={state}>
                 <ACheck message={"Aceptar tanto nuestros terminos y condiciones como las politcas de privacidad"} />
             </AppContext.Provider>

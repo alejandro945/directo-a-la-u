@@ -19,7 +19,8 @@ const theme = createTheme({
             fontSize: 25,
             '@media (min-width:600px)': {
                 fontSize: 30,
-            }
+            },
+            fontStyle: 'italic',
         },
         body2: {
             fontFamily: 'Dongle',
@@ -31,7 +32,7 @@ const theme = createTheme({
             fontWeight: 500
         },
         h2: {
-            fontFamily: 'Dongle'
+            fontFamily: 'Dongle',
         },
         h4: {
             fontFamily: 'Dongle'
