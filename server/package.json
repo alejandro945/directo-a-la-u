@@ -4,7 +4,8 @@
   "description": "Server Side of DIRECTO_A_LA_U App",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "author": "Alejandro Varela",
   "license": "MIT",
@@ -15,9 +16,9 @@
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
-    "sequelize": "^6. 13.0"
+    "sequelize": "^6.13.0"
   },
-  "devDependencies": {
-    "sequelize-cli": "^6.4.1"
+  "engines": {
+    "node": "14.x"
   }
 }

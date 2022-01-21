@@ -13,7 +13,7 @@ module.exports = {
     /**
      * Port
      */
-    port: parseInt(process.env.PORT, 10),
+    port: process.env.PORT || 4000,
 
     /**
      * Database Dev Env

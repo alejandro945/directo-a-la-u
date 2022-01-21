@@ -7,9 +7,8 @@ router.post('/new', add)
 router.put('/:id', update)
 router.delete('/:id', remove)
 
-const db = require('../../db/models');
-const BasicService = require('../../services/BasicService');
-const service = new BasicService(db.Employee);
+//const db = require('../../db/models');
+//const BasicService = require('../../services/BasicService');
 
 function get(_, res, next) {
     service.get()
