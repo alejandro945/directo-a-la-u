@@ -10,9 +10,6 @@ router.post('/new', add)
 router.put('/:id', update)
 router.delete('/:id', remove)
 
-
-
-
 function get(_, res, next) {
     service.get()
         .then(results => res.status(200).json(results))
@@ -28,7 +25,6 @@ function getById(req, res, next) {
 
 function add(req, res, next) {
     const newPassenger = req.body;
-    console.log(newPassenger);
     service.add(newPassenger)
         .then(results => res.status(200).json(results))
         .catch(err => next(err))
