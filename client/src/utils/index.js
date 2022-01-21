@@ -51,7 +51,7 @@ export function getRow(editRowsModel) {
         const Ida = { 'Ida': Ivalue }
         const Regreso = { 'Regreso': Rvalue }
         const prop = { ...Ida, ...Regreso }
-        return [prop, i]
+        return [prop, i-1]
     }
     return null
 }

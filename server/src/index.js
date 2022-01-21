@@ -5,7 +5,6 @@ const cors = require('cors');
 const indexRouter = require('./routes');
 //Settings
 const { port, api } = require('./config');
-const sequelize = require('./db');
 //External Access from Front
 app.use(cors());
 //App Middleware

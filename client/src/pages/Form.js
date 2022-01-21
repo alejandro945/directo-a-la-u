@@ -6,7 +6,6 @@ import { DataGrid } from '@mui/x-data-grid';
 import rows, { getRow, upperFormat } from '../utils'
 import SendIcon from '@mui/icons-material/Send';
 import ASelect from '../components/ASelect';
-import AConfirmation from '../components/AConfirmation';
 import AMixim from '../components/AMixim';
 
 const Form = () => {
@@ -19,28 +18,28 @@ const Form = () => {
         address: '',
         origin: '',
         destination: '',
-        schedule: {
-            1: {
+        schedule: [
+            {
                 Ida: false,
                 Regreso: false
             },
-            2: {
+            {
                 Ida: false,
                 Regreso: false
             },
-            3: {
+            {
                 Ida: false,
                 Regreso: false
             },
-            4: {
+            {
                 Ida: false,
                 Regreso: false
             },
-            5: {
+            {
                 Ida: false,
                 Regreso: false
             }
-        }
+        ]
     })
 
     const handleEditRowsModelChange = (model) => {
@@ -49,9 +48,9 @@ const Form = () => {
         if (result) {
             setPassenger((prev) => ({
                 ...prev,
-                'schedule': {
+                'schedule':{
                     ...prev.schedule,
-                    [result[1]]: result[0]
+                    [[result[1]]]: result[0]
                 }
             }))
         }
@@ -67,7 +66,7 @@ const Form = () => {
     };
 
     const onSubmit = (event) => {
-        AMixim('Pasajero guardado exitosamente','success');
+        AMixim('Pasajero guardado exitosamente', 'success');
         event.preventDefault();
     };
 

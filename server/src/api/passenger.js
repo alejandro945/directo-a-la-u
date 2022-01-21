@@ -1,5 +1,8 @@
 const { Router } = require('express')
+const db = require('../db/models')
 const router = Router()
+const PassengerService = require('../services/PassengerService')
+const service = new PassengerService(db.Passengers)
 
 router.get('/', get)
 router.get('/:id', getById)
@@ -7,8 +10,8 @@ router.post('/new', add)
 router.put('/:id', update)
 router.delete('/:id', remove)
 
-//const db = require('../../db/models');
-//const BasicService = require('../../services/BasicService');
+
+
 
 function get(_, res, next) {
     service.get()
@@ -24,8 +27,9 @@ function getById(req, res, next) {
 }
 
 function add(req, res, next) {
-    const newEmployee = req.body;
-    service.add(newEmployee)
+    const newPassenger = req.body;
+    console.log(newPassenger);
+    service.add(newPassenger)
         .then(results => res.status(200).json(results))
         .catch(err => next(err))
 }
