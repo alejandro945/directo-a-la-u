@@ -2,32 +2,32 @@ const rows = [
     {
         id: 1,
         Dia: 'Lunes',
-        Ida: false,
-        Regreso: false
+        ida: false,
+        regreso: false
     },
     {
         id: 2,
         Dia: 'Martes',
-        Ida: false,
-        Regreso: false
+        ida: false,
+        regreso: false
     },
     {
         id: 3,
         Dia: 'Miercoles',
-        Ida: false,
-        Regreso: false
+        ida: false,
+        regreso: false
     },
     {
         id: 4,
         Dia: 'Jueves',
-        Ida: false,
-        Regreso: false
+        ida: false,
+        regreso: false
     },
     {
         id: 5,
         Dia: 'Viernes',
-        Ida: false,
-        Regreso: false
+        ida: false,
+        regreso: false
     }
 ]
 export default rows
@@ -42,16 +42,13 @@ export function getRow(editRowsModel) {
     let i = 0
     for (let index = 1; index < 6; index++) {
         if (editRowsModel[index]) {
-            Ivalue = editRowsModel[index].Ida.value
-            Rvalue = editRowsModel[index].Regreso.value
+            Ivalue = editRowsModel[index].ida.value
+            Rvalue = editRowsModel[index].regreso.value
             i = index
         }
     }
     if (Ivalue != null) {
-        const Ida = { 'Ida': Ivalue }
-        const Regreso = { 'Regreso': Rvalue }
-        const prop = { ...Ida, ...Regreso }
-        return [prop, i-1]
+        return [Ivalue,Rvalue, i-1]
     }
     return null
 }

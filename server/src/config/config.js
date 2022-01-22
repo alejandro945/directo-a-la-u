@@ -5,6 +5,7 @@ module.exports = {
     dialect: dev.dialect,
     username: dev.username,
     password: dev.password,
+    port: 3306,
     database: dev.database,
     host: dev.host,
     dialectOptions: {
@@ -18,16 +19,13 @@ module.exports = {
     host: '',
     port: 3306,
     dialect: '',
-    dialectOptions: {
-      bigNumberStrings: true
-    }
   },
   production: {
-    username: process.env.PROD_DB_USERNAME,
-    password: process.env.PROD_DB_PASSWORD,
-    database: process.env.PROD_DB_NAME,
-    host: process.env.PROD_DB_HOSTNAME,
-    port: process.env.PROD_DB_PORT,
-    dialect: 'mysql'
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    host: process.env.DB_HOST,
+    port: 3306,
+    dialect: process.env.DB_DIALECT,
   }
 };

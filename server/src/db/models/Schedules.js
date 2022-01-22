@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         passenger_id:{
             type: DataTypes.INTEGER 
         },
+        dia:{
+            type: DataTypes.STRING,
+            allowNull: false  
+        },
         ida: {
             type: DataTypes.BOOLEAN,
             allowNull: false

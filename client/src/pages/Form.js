@@ -8,7 +8,6 @@ import SendIcon from '@mui/icons-material/Send';
 import ASelect from '../components/ASelect';
 import AMixim from '../components/AMixim';
 import { addPassanger } from '../services/api';
-import { Redirect } from 'react-router-dom'
 
 const Form = () => {
     const [editRowsModel, setEditRowsModel] = React.useState({});
@@ -20,26 +19,31 @@ const Form = () => {
         address: '',
         origin: '',
         destination: '',
-        schedule: [
+        Schedules: [
             {
-                Ida: false,
-                Regreso: false
+                dia: 'LUNES',
+                ida: false,
+                regreso: false
             },
             {
-                Ida: false,
-                Regreso: false
+                dia: 'MARTES',
+                ida: false,
+                regreso: false
             },
             {
-                Ida: false,
-                Regreso: false
+                dia: 'MIERCOLES',
+                ida: false,
+                regreso: false
             },
             {
-                Ida: false,
-                Regreso: false
+                dia: 'JUEVES',
+                ida: false,
+                regreso: false
             },
             {
-                Ida: false,
-                Regreso: false
+                dia: 'VIERNES',
+                ida: false,
+                regreso: false
             }
         ]
     })
@@ -50,10 +54,15 @@ const Form = () => {
         if (result) {
             setPassenger((prev) => ({
                 ...prev,
-                'schedule': {
-                    ...prev.schedule,
-                    [[result[1]]]: result[0]
-                }
+                'Schedules': [
+                    ...prev.Schedules.slice(0, result[2]),
+                    {
+                        ...prev.Schedules[result[2]],
+                        'ida': result[0],
+                        'regreso': result[1]
+                    },
+                    ...prev.Schedules.slice(result[2]+1,prev.Schedules.length)
+                ]
             }))
         }
     };
@@ -68,15 +77,14 @@ const Form = () => {
     };
 
     const onSubmit = (event) => {
+        event.preventDefault();
         addPassanger(passenger).then(res => {
             if (res.status === 200) {
                 AMixim('Pasajero guardado exitosamente', 'success');
-                <Redirect to='/' />
             } else {
                 AMixim('Error en el servidor', 'error');
             }
         }).catch(err => { AMixim(err, 'warning'); })
-        event.preventDefault();
     };
 
     return (
@@ -109,7 +117,7 @@ const Form = () => {
                 <ACard>
                     <Title title={"Selecciona los dias que tomaras nuestro servicio 🚐"} subtitle={"Ojala sean todos los dias (ida y regreso) 😬"} />
                     <div className='my-4 container-sm text-center' style={{ height: 300 }}>
-                        <DataGrid columns={[{ field: 'Dia', width: 200 }, { field: 'Ida', type: 'boolean', width: 150, editable: true }, { field: 'Regreso', type: 'boolean', width: 150, editable: true }]}
+                        <DataGrid columns={[{ field: 'Dia', width: 200 }, { field: 'ida', type: 'boolean', width: 150, editable: true }, { field: 'regreso', type: 'boolean', width: 150, editable: true }]}
                             rows={rows}
                             editMode="row"
                             editRowsModel={editRowsModel}
