@@ -7,6 +7,8 @@ import rows, { getRow, upperFormat } from '../utils'
 import SendIcon from '@mui/icons-material/Send';
 import ASelect from '../components/ASelect';
 import AMixim from '../components/AMixim';
+import { addPassanger } from '../services/api';
+import { Redirect } from 'react-router-dom'
 
 const Form = () => {
     const [editRowsModel, setEditRowsModel] = React.useState({});
@@ -48,7 +50,7 @@ const Form = () => {
         if (result) {
             setPassenger((prev) => ({
                 ...prev,
-                'schedule':{
+                'schedule': {
                     ...prev.schedule,
                     [[result[1]]]: result[0]
                 }
@@ -66,7 +68,14 @@ const Form = () => {
     };
 
     const onSubmit = (event) => {
-        AMixim('Pasajero guardado exitosamente', 'success');
+        addPassanger(passenger).then(res => {
+            if (res.status === 200) {
+                AMixim('Pasajero guardado exitosamente', 'success');
+                <Redirect to='/' />
+            } else {
+                AMixim('Error en el servidor', 'error');
+            }
+        }).catch(err => { AMixim(err, 'warning'); })
         event.preventDefault();
     };
 

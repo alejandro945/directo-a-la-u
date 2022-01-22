@@ -6,11 +6,15 @@ const instance = axios.create({
 });
 
 export async function getPassangers() {
-    return await instance.get(`/passangers`);
+    return await instance.get(`passangers`);
+}
+
+export async function addPassanger(passenger) {
+  return await instance.post(`passangers/new`, passenger);
 }
 
 export async function getPayment(date) {
-    return await instance.get('/payment', {
+    return await instance.get('payment', {
         params: {
           Date: date
         }
