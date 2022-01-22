@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "http://localhost:3000/static/js/main.6a8036b5.js",
-    "index.html": "http://localhost:3000/index.html",
-    "main.6a8036b5.js.map": "http://localhost:3000/static/js/main.6a8036b5.js.map"
+    "main.js": "http://especialesaltagama.com/static/js/main.c71c78ce.js",
+    "index.html": "http://especialesaltagama.com/index.html",
+    "main.c71c78ce.js.map": "http://especialesaltagama.com/static/js/main.c71c78ce.js.map"
   },
   "entrypoints": [
-    "static/js/main.6a8036b5.js"
+    "static/js/main.c71c78ce.js"
   ]
 }
