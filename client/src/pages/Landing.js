@@ -16,20 +16,23 @@ export default function Landing() {
     return (
         <div className='container p-4 text-center'>
             <Typography variant='h2'>¿Porque elegirnos?</Typography>
-            <AAccordion/>
+            <AAccordion />
             <Typography variant='h2'>Nuestros vehiculos</Typography>
-            <AImageList/>
+            <AImageList />
             <AChip data={["Seguridad", "Comfort", "Amabilidad"]} />
             <Divider variant="middle" />
             <Typography variant='h2'>Horarios</Typography>
-            <ATimeline/>
+            <ATimeline />
             <TAlert message={"⏱ El tiempo en cada punto de recogida es de maximo 5 minutos. Por favor estar a tiempo!"} type={'info'} />
             <Divider variant="middle" />
             <Typography variant='h2'>Medios de pago</Typography>
+            <p className="lead">
+                Sin efectivo, confirma tu servicio por cualquiera de estos medios de pago (3234498898 📲)
+            </p>
             <img style={{ width: 400 }} src='/images/MEDIOS_DE_PAGO.png' loading="lazy" alt="props"></img>
-            <TAlert message={"💰 El servicio tiene un costo de $10,000 pesos por trayecto (10,000 la ida y 10,000 el retorno)"} type={'warning'} />
+            <TAlert message={"💰 El servicio tiene un costo de $8,000 pesos por trayecto (8,000 la ida y 8,000 el retorno)"} type={'warning'} />
             <AppContext.Provider value={state}>
-                <ACheck message={"Aceptar tanto nuestros terminos y condiciones como las politcas de privacidad"} />
+                <ACheck message={"Aceptar tanto nuestros terminos y condiciones como las politcas de privacidad, para continuar."} />
             </AppContext.Provider>
             <Button sx={{ mb: '3rem', width: '50%' }} variant='outlined' href='form' disabled={!disabled}>
                 Empezar

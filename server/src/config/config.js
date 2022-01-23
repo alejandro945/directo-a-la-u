@@ -8,9 +8,6 @@ module.exports = {
     port: 3306,
     database: dev.database,
     host: dev.host,
-    dialectOptions: {
-      socketPath: dev.socketPath
-    }
   },
   test: {
     username: process.env.CI_DB_USERNAME,

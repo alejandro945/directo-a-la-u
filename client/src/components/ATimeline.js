@@ -22,7 +22,7 @@ export default function ATimeline() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    5:20 am
+                    5:15 am
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
@@ -44,7 +44,7 @@ export default function ATimeline() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    5:30 am
+                    5:25 am
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
@@ -66,7 +66,7 @@ export default function ATimeline() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    5:40 am
+                    5:35 am
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector sx={{ bgcolor: 'primary.main' }}/>

@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "http://especialesaltagama.com/static/js/main.c71c78ce.js",
-    "index.html": "http://especialesaltagama.com/index.html",
-    "main.c71c78ce.js.map": "http://especialesaltagama.com/static/js/main.c71c78ce.js.map"
+    "main.js": "/directo_a_la_u/static/js/main.d7364da6.js",
+    "index.html": "/directo_a_la_u/index.html",
+    "main.d7364da6.js.map": "/directo_a_la_u/static/js/main.d7364da6.js.map"
   },
   "entrypoints": [
-    "static/js/main.c71c78ce.js"
+    "static/js/main.d7364da6.js"
   ]
 }

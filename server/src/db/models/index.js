@@ -35,5 +35,9 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 //Sync 🔥 and without child for new creations 👺
 //sequelize.sync({ force: true });
+sequelize.authenticate().then(
+  console.log('Connection has been established successfully.')).
+  catch(error=>(console.log(error)))
+
 
 module.exports = db;

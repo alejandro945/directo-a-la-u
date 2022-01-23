@@ -19,6 +19,7 @@ function App() {
           <Route path="form" element={<Form />} />
           <Route path="payment" element={<Payment />} />
           <Route path="table" element={<Table />} />
+          <Route path="*" element={<Landing />} />
         </Routes>
         <Footer />
       </Theme>

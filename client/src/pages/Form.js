@@ -8,9 +8,11 @@ import SendIcon from '@mui/icons-material/Send';
 import ASelect from '../components/ASelect';
 import AMixim from '../components/AMixim';
 import { addPassanger } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
     const [editRowsModel, setEditRowsModel] = React.useState({});
+    let navigate = useNavigate();
 
     const [passenger, setPassenger] = useState({
         name: '',
@@ -61,7 +63,7 @@ const Form = () => {
                         'ida': result[0],
                         'regreso': result[1]
                     },
-                    ...prev.Schedules.slice(result[2]+1,prev.Schedules.length)
+                    ...prev.Schedules.slice(result[2] + 1, prev.Schedules.length)
                 ]
             }))
         }
@@ -79,13 +81,15 @@ const Form = () => {
     const onSubmit = (event) => {
         event.preventDefault();
         addPassanger(passenger).then(res => {
+            console.log(res);
             if (res.status === 200) {
-                AMixim('Pasajero guardado exitosamente', 'success');
+                AMixim('Estamos listos te esperamos en la ruta!', 'success');
+                navigate("../", { replace: true });
             } else {
-                AMixim('Error en el servidor', 'error');
-            }
-        }).catch(err => { AMixim(err, 'warning'); })
-    };
+                AMixim('Server Error', 'error')
+                    }
+        }).catch(err => { AMixim('Tenemos Sobrecarga, vuelve a intentar', 'warning') })
+    }
 
     return (
         <div className="container p-4">

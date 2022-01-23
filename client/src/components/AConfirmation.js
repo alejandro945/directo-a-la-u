@@ -1,20 +1,19 @@
 import Swal from 'sweetalert2';
-import AMixim from './AMixim';
 
-const AConfirmation = () => {
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+export default function AConfirmation(state,setState){
+    const Modal = {
+        title: 'Deseas confirmar tu asistencia?',
+        text: "Creemos en tu palabra 😅!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
+        confirmButtonText: 'Confirmo!'
+    }
+    Swal.fire(Modal).then((result) => {
+        console.log(result);
         if (result.isConfirmed) {
-            AMixim('Registro guardado exitosamente', 'success')
+            setState(!state)
         }
     })
-};
-
-export default AConfirmation;
+}

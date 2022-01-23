@@ -119,7 +119,7 @@ const columns = [
   { field: 'name', headerName: 'Nombres', width: 180, editable: true },
   { field: 'age', headerName: 'Apellidos', editable: true },
   { field: 'telephone', headerName: 'Telefono',type: Number, editable: true },
-  { field: 'address', headerName: 'Dirección', editable: true },
+  { field: 'address', headerName: 'Direccion', editable: true },
   { field: 'origin', headerName: 'Origen', editable: true },
   { field: 'destination', headerName: 'Destino', editable: true },
 ];
