@@ -5,7 +5,6 @@ import Form from './pages/Form';
 import Theme from './theme';
 import Footer from './components/Footer';
 import Payment from './pages/Payment';
-import Table from './pages/Table';
 import Landing from './pages/Landing';
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="form" element={<Form />} />
           <Route path="payment" element={<Payment />} />
-          <Route path="table" element={<Table />} />
           <Route path="*" element={<Landing />} />
         </Routes>
         <Footer />

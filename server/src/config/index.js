@@ -32,5 +32,10 @@ module.exports = {
      */
     api: {
         prefix: '/api',
+    },
+
+    sms:{
+        sid:process.env.ACCOUNT_SID,
+        token:process.env.AUTH_TOKEN
     }
 };

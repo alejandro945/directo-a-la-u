@@ -34,7 +34,7 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 //Sync 🔥 and without child for new creations 👺
-//sequelize.sync({ force: true });
+//sequelize.sync();
 sequelize.authenticate().then(
   console.log('Connection has been established successfully.')).
   catch(error=>(console.log(error)))

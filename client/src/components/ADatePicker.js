@@ -5,8 +5,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 
-export default function ADatePicker() {
-  const [value, setValue] = React.useState(new Date());
+export default function ADatePicker({name,handle}) {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -14,9 +13,7 @@ export default function ADatePicker() {
         openTo="day"
         value={value}
         shouldDisableDate={isWeekend}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
+        onChange={(event,value) =>( handle({ target: { name, value: value } }))}
         renderInput={(params) => <TextField {...params} />}
       />
     </LocalizationProvider>

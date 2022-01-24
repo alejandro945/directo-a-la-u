@@ -101,7 +101,7 @@ export default function ATimeline() {
                     <Typography variant="h6" component="span">
                         Universidades
                     </Typography>
-                    <Typography >Valle,Libre,UAO,Jave,Icesi</Typography>
+                    <Typography >Valle,UAO,Jave,Icesi</Typography>
                 </TimelineContent>
             </TimelineItem>
         </Timeline>

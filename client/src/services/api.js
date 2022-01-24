@@ -13,11 +13,15 @@ export async function addPassanger(passenger) {
   return await instance.post(`passengers/new`, passenger);
 }
 
-export async function getPayment(date) {
-    return await instance.get('payment', {
-        params: {
-          Date: date
-        }
-      });
+export async function filter(data) {
+  return await instance.get(`passengers`,data);
+}
+
+export async function addPayment(payment) {
+  return await instance.post(`payments/new`, payment);
+}
+
+export async function editPayment(payment) {
+  return await instance.post(`payments/new`, payment);
 }
 

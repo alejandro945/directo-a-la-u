@@ -75,11 +75,10 @@ const Form = () => {
             ...prev,
             [name]: upperFormat(value)
         }));
-        console.log(passenger);
     };
 
-    const onSubmit = (event) => {
-        event.preventDefault();
+    const onSubmit = (e) => {
+        e.preventDefault();
         addPassanger(passenger).then(res => {
             console.log(res);
             if (res.status === 200) {
